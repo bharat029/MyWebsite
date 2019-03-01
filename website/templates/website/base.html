@@ -21,20 +21,24 @@
   <body class="bg-dark text-white">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-sm navbar-dark row sticky-top bg-dark" style="font-size: 125%">
-        <h1><a class="navbar-brand text-center text-white col-lg-3 col-xs-8" href="{% url 'website:index' %}">Bharathan Mudaliar</a></h1>
+        <a class="navbar-brand text-center text-white col-lg-3 d-none d-lg-block" style="width:60vh;" href="{% url 'website:index' %}">Bharathan Mudaliar</a>
+        <h1 class="d-xs-block d-lg-none"><a class="navbar-brand text-center text-white col-lg-3 col-xs-8" href="{% url 'website:index' %}">Bharathan Mudaliar</a></h1>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link float-right float-sm-none text-white" href="{% url 'website:projects' %}">Projects <span class="sr-only">(current)</span></a>
+              <a class="nav-link text-white" href="{% url 'website:index' %}">About Me </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link float-right float-sm-none text-white" href="{% url 'website:skillset' %}">Skillset</a>
+              <a class="nav-link text-white" href="{% url 'website:projects' %}">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link float-right float-sm-none text-white" href="{% url 'website:cv' %}">CV</a>
+              <a class="nav-link text-white" href="{% url 'website:skillset' %}">Skillset</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'website:cv' %}">CV</a>
             </li>
           </ul>
         </div>

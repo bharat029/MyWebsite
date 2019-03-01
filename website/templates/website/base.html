@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block metaNtitle %}
+    {% endblock %}
+
+    {% load staticfiles %}
+
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+
+  </head>
+  <body class="bg-dark text-white">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-sm navbar-dark row sticky-top bg-dark" style="font-size: 125%">
+        <h1><a class="navbar-brand text-center text-white col-lg-3 col-xs-8" href="{% url 'website:index' %}">Bharathan Mudaliar</a></h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link float-right float-sm-none text-white" href="{% url 'website:projects' %}">Projects <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link float-right float-sm-none text-white" href="{% url 'website:skillset' %}">Skillset</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link float-right float-sm-none text-white" href="{% url 'website:cv' %}">CV</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="row">
+            <div class="col-lg-12 col-sm-3 d-none d-sm-block">
+              <img class="img-fluid rounded-circle mx-auto d-block" style="border: 3px solid lightgrey;width:60%;" src="{% static 'website/images/me.png' %}" alt="Bharathan Mudaliar">
+            </div>
+            <div class="col-lg-12 col-sm-7">
+              <div class="text-lg-center text-sm-left align-middle" style="margin-top:5%;">
+                <h1 class="h2">Bharathan Mudaliar</h1>
+                <h4 class="d-none d-sm-block">BE (CSE) student</h4>
+                <h6 class="d-none d-sm-block">An Enthusiastic learner on MOOC Platforms, especially passionate about Deep Learning</h6>
+              </div>
+            </div>
+            <div class="d-lg-none d-md-block col-sm-2" style="margin-top: 5%;">
+              <div class="dropdown">
+                  <a data-toggle="dropdown" class="btn btn-info dropdown-toggle float-right">
+                      Follow
+                  </a>
+                  <ul class="dropdown-menu bg-dark">
+                    <li class="dropdown-item text-white">
+                      <i class="fa fa-fw fa-map-marker"></i> Vadodara, Gujarat, India
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="text-white" href="mailto:vbharathan.2013@gmail.com">
+                        <i class="fa fa-fw fa-envelope-square"></i> Email
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="text-white" href="https://www.linkedin.com/in/v-bharathan-mudaliar-51289b157/">
+                        <i class="fa fa-fw fa-linkedin-square"></i> Linkedin
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="text-white" href="https://www.facebook.com/bharathan.vs" target="_blank">
+                        <i class="fa fa-fw fa-facebook-square"></i> Facebook
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="text-white" href="https://github.com/bharat029/" target="_blank">
+                        <i class="fa fa-fw fa-github-square"></i> Github
+                      </a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="d-none d-lg-block">
+            <div class="row">
+              <ul class="list-unstyled col-10" style="margin-left:25%; margin-top: 10%;">
+                <li>
+                  <i class="fa fa-fw fa-map-marker"></i> Vadodara, Gujarat, India
+                </li>
+                <li>
+                  <a class="text-white" href="mailto:Svbharathan.2013@gmail.com">
+                    <i class="fa fa-fw fa-envelope-square"></i> Email
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white" href="https://www.linkedin.com/in/v-bharathan-mudaliar-51289b157/">
+                    <i class="fa fa-fw fa-linkedin-square"></i> Linkedin
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white" href="https://www.facebook.com/bharathan.vs" target="_blank">
+                    <i class="fa fa-fw fa-facebook-square"></i> Facebook
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white" href="https://github.com/bharat029/" target="_blank">
+                    <i class="fa fa-fw fa-github-square"></i> Github
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-height-custom" style="overflow-y: scroll;">
+          <br><br>
+          {% block content %}
+          {% endblock %}
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

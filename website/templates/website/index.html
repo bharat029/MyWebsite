@@ -1,0 +1,16 @@
+{% extends 'website/base.html' %}
+
+{% block metaNtitle %}
+<title>About Me - Bharathan Mudailar</title>
+{% endblock %}
+
+{% block content %}
+<h3>About Me</h3>
+<br>
+{% if all_about_me %}
+  {% for about_me in all_about_me %}
+    <p>{{ about_me.about_me }}</p>
+  {% endfor %}
+  {% endif %}
+<br><br><br>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'website/base.html' %}
+
+{% block metaNtitle %}
+<title>CV - Bharathan Mudailar</title>
+{% endblock%}
+
+{% block content %}
+<h3>Education</h3>
+{% if all_education %}
+  <ul>
+  {% for education in all_education %}
+    <li>{{ education.education }}</li>
+  {% endfor %}
+  </ul>
+{% endif %}
+<br>
+<h3>Professional Intrests</h3>
+{% if all_professional_inrests %}
+  <ul>
+  {% for professional_inrests in all_professional_inrests %}
+    <li>{{ professional_inrests.professional_inrests }}</li>
+  {% endfor %}
+  </ul>
+{% endif %}
+<br><br>
+<h3>Computer Skills</h3>
+{% if all_computer_skills %}
+  <dl>
+  {% for computer_skills in all_computer_skills %}
+    <dt>{{ computer_skills.title }}:</dt>
+    <dd class="offset-1">computer_skills.definition</dd>
+  {% endfor %}
+  </dl>
+{% endif %}
+<br>
+<h3>Possitions Of Responsibility</h3>
+{% if all_possitions_of_responsibility %}
+  <dl>
+  {% for possitions_of_responsibility in all_possitions_of_responsibility %}
+    <dt>{{ possitions_of_responsibility.title }}:</dt>
+    <dd class="offset-1">{{ possitions_of_responsibility.definition }}</dd>
+  {% endfor %}
+  </dl>
+{% endif %}
+<br>
+<h3>Hackathon</h3>
+{% if all_hackathon %}
+  <dl>
+  {% for hackathon in all_hackathon %}
+    <dt>{{ hackathon.title }}:</dt>
+    <dd class="offset-1">{{ hackathon.definition }}</dd>
+  {% endfor %}
+  </dl>
+{% endif %}
+<br>
+<h3>Volunteer Experience</h3>
+{% if all_volunteer_experience %}
+  <dl>
+  {% for volunteer_experience in all_volunteer_experience %}
+    <dt>{{ volunteer_experience.title }}:</dt>
+    <dd class="offset-1">{{ volunteer_experience.definition }}
+      <ul class="list-unstyled">
+        <li>{{ volunteer_experience.role1 }}</li>
+        <li>{{ volunteer_experience.role2 }}</li>
+        <li>{{ volunteer_experience.role3 }}</li>
+      </ul>
+    </dd>
+  {% endfor %}
+  </dl>
+{% endif %}
+<br>
+<h3>Hobbies/Intrests</h3>
+{% if all_hobbies %}
+  <ul class="list-unstyled">
+  {% for hobbies in all_hobbies %}
+    <li>{{ hobbies.hobbies }}</li>
+  {% endfor %}
+  </ul>
+{% endif %}
+<br><br>
+<a href="{% url 'website:download' %}" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download CV</a>
+<br><br>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'website/base.html' %}
+
+{% block metaNtitle %}
+<title>{{ project.project_title }} - Bharathan Mudailar</title>
+{% endblock%}
+
+{% block content %}
+<h3>{{ project.project_title }}</h3>
+<p>{{ project.l_description }} </p>
+
+<h4>Project Highlihgts</h4>
+<ul>
+  <li>{{ project.highlight_1 }}</li>
+  <li>{{ project.highlight_2 }}</li>
+  <li>{{ project.highlight_3 }}</li>
+</ul>
+<br><br>
+<p><a href="{{ project.github_link }}" class="text-white">See Repository</a></p>
+<br><br><br>
+{% endblock %}

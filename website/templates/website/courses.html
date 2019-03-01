@@ -1,0 +1,29 @@
+{% extends 'website/base.html' %}
+
+{% block metaNtitle %}
+<meta property="og:title" content="Skillset">
+<link rel="canonical" href="http://bharathanmudaliar.pythonanywhere.com/Skillset/">
+<meta property="og:url" content="http://bharathanmudaliar.pythonanywhere.com/skillset/">
+<meta property="og:description" content="Projects">
+<title>Skillset - Bharathan Mudailar</title>
+{% endblock%}
+
+{% block content %}
+<h3>Technical Skills</h3>
+{% if all_courses %}
+<ul style="list-style: none;">
+  {% for course in all_courses %}
+  <li>
+    <br>
+    <a class="text-white" href="{{ course.certificate_link }}">
+      <h5>{{ course.course_title }}</h5>
+      </a>
+      <p style="display:inline;">{{ course.offered_by }}</p><small class="float-right">{{ course.plateform }}</small>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <h3>No Skills To Show</h3>
+  {% endif %}
+  <br><br><br>
+{% endblock %}

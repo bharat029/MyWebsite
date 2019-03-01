@@ -1,0 +1,26 @@
+{% extends 'website/base.html' %}
+
+{% block metaNtitle %}
+<title>Projects - Bharathan Mudailar</title>
+{% endblock%}
+
+{% block content %}
+<h3>Projects</h3>
+<p>All of my projects can be found <a class="text-white" href="https://github.com/bharat029/">here</a></p>
+{% if all_projects %}
+<ul style="list-style: none;">
+  {% for project in all_projects %}
+  <li>
+    <br>
+    <a class="text-white" href="{% url 'website:project_details' project.id  %}">
+      <h5>{{ project.project_title }}</h5>
+      </a>
+      <p>{{ project.s_description }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <h3>No Projects To Show</h3>
+  {% endif %}
+  <br><br><br>
+{% endblock %}

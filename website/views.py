@@ -9,14 +9,14 @@ class ProjectListView(ListView):
     context_object_name = 'all_projects'
 
     def get_queryset(self):
-        return Project.objects.all()
+        return sorted(Project.objects.all(), key=lambda x: x.order)
 
 class SkillsetListView(ListView):
     template_name = 'website/courses.html'
     context_object_name = 'all_courses'
 
     def get_queryset(self):
-        return Course.objects.all()
+        return sorted(Course.objects.all(), key=lambda x: x.order)
 
 class AboutMeListView(ListView):
     template_name = 'website/index.html'

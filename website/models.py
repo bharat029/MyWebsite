@@ -16,6 +16,7 @@ class Course(models.Model):
     plateform = models.CharField(max_length = 50)
     score = models.IntegerField(blank=True)
     certificate_link = models.CharField(max_length = 250, blank=True)
+    order = models.IntegerField(default=0)
 
     def get_absolute_url(self):
         return reverse('website:skillset')
@@ -31,6 +32,7 @@ class Project(models.Model):
     highlight_2 = models.CharField(max_length = 250, blank=True)
     highlight_3 = models.CharField(max_length = 250, blank=True)
     github_link = models.CharField(max_length = 250, blank=True)
+    order = models.IntegerField(default=0)
 
     def get_absolute_url(self):
         return reverse('website:project_details', kwargs={'pk':self.id})

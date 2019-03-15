@@ -28,7 +28,7 @@
   <dl>
   {% for computer_skills in all_computer_skills %}
     <dt>{{ computer_skills.title }}:</dt>
-    <dd class="offset-1">computer_skills.definition</dd>
+    <dd class="offset-1">{{ computer_skills.definition }}</dd>
   {% endfor %}
   </dl>
 {% endif %}

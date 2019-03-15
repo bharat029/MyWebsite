@@ -19,6 +19,11 @@ display: none;
     height: 90vh;
   }
 }
+
 #follow > li:hover {
     background: darkblue;
+}
+
+.border-bottom {
+  border-bottom: 2px solid white !important;
 }

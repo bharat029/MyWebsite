@@ -8,12 +8,28 @@ class ProjectListView(ListView):
     template_name = 'website/projects.html'
     context_object_name = 'all_projects'
 
+    def get_context_data(self, *args, **kwargs):
+        context = super(ProjectListView, self).get_context_data(*args, **kwargs)
+        context['about_me'] = ' '
+        context['projects'] = 'border-bottom'
+        context['skillset'] = ' '
+        context['cv'] = ' '
+        return context
+
     def get_queryset(self):
         return sorted(Project.objects.all(), key=lambda x: x.order)
 
 class SkillsetListView(ListView):
     template_name = 'website/courses.html'
     context_object_name = 'all_courses'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(SkillsetListView, self).get_context_data(*args, **kwargs)
+        context['about_me'] = ' '
+        context['projects'] = ' '
+        context['skillset'] = 'border-bottom'
+        context['cv'] = ' '
+        return context
 
     def get_queryset(self):
         return sorted(Course.objects.all(), key=lambda x: x.order)
@@ -22,6 +38,14 @@ class AboutMeListView(ListView):
     template_name = 'website/index.html'
     context_object_name = 'all_about_me'
 
+    def get_context_data(self, *args, **kwargs):
+        context = super(AboutMeListView, self).get_context_data(*args, **kwargs)
+        context['about_me'] = 'border-bottom'
+        context['projects'] = ' '
+        context['skillset'] = ' '
+        context['cv'] = ' '
+        return context
+
     def get_queryset(self):
         return AboutMe.objects.all()
 
@@ -29,6 +53,14 @@ class ProjectDetailView(DetailView):
     model = Project
     template_name = 'website/projectDetails.html'
     context_object_name = 'project'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(ProjectDetailView, self).get_context_data(*args, **kwargs)
+        context['about_me'] = ' '
+        context['projects'] = 'border-bottom'
+        context['skillset'] = ' '
+        context['cv'] = ' '
+        return context
 
 def cv(request):
     all_education = Education.objects.all()
@@ -46,7 +78,11 @@ def cv(request):
     'all_possitions_of_responsibility' : all_possitions_of_responsibility,
     'all_hackathon' : all_hackathon,
     'all_volunteer_experience' : all_volunteer_experience,
-    'all_hobbies' : all_hobbies
+    'all_hobbies' : all_hobbies,
+    'about_me' : ' ',
+    'projects' : ' ',
+    'skillset' : ' ',
+    'cv' : 'border-bottom'
     }
     return render(request, 'website/cv.html', context)
 

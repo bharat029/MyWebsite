@@ -29,16 +29,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'website:index' %}">About me </a>
+              <a class="nav-link text-white {{ about_me }}" href="{% url 'website:index' %}">About me </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'website:projects' %}">Projects</a>
+              <a class="nav-link text-white {{ projects }}" href="{% url 'website:projects' %}">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'website:skillset' %}">Skillset</a>
+              <a class="nav-link text-white {{ skillset }}" href="{% url 'website:skillset' %}">Skillset</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'website:cv' %}">CV</a>
+              <a class="nav-link text-white {{ cv }}" href="{% url 'website:cv' %}">CV</a>
             </li>
           </ul>
         </div>

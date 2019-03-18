@@ -8,7 +8,7 @@ display: none;
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .col-height-custom {
     height: 60vh;
   }
@@ -16,19 +16,14 @@ display: none;
     border-bottom: 2px solid white !important;
   }
   .nav-link {
+    width: 125px;
     text-align: center !important;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .col-height-custom {
     height: 90vh;
-  }
-}
-
-@media (min-width: 1200px) {
-  .col-height-custom {
-    height: 1140px;
   }
 }
 

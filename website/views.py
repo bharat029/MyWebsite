@@ -11,7 +11,7 @@ class ProjectListView(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super(ProjectListView, self).get_context_data(*args, **kwargs)
         context['about_me'] = ' '
-        context['projects'] = 'border-bottom'
+        context['projects'] = 'show-active'
         context['skillset'] = ' '
         context['cv'] = ' '
         return context
@@ -27,7 +27,7 @@ class SkillsetListView(ListView):
         context = super(SkillsetListView, self).get_context_data(*args, **kwargs)
         context['about_me'] = ' '
         context['projects'] = ' '
-        context['skillset'] = 'border-bottom'
+        context['skillset'] = 'show-active'
         context['cv'] = ' '
         return context
 
@@ -40,7 +40,7 @@ class AboutMeListView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(AboutMeListView, self).get_context_data(*args, **kwargs)
-        context['about_me'] = 'border-bottom'
+        context['about_me'] = 'show-active'
         context['projects'] = ' '
         context['skillset'] = ' '
         context['cv'] = ' '
@@ -57,7 +57,7 @@ class ProjectDetailView(DetailView):
     def get_context_data(self, *args, **kwargs):
         context = super(ProjectDetailView, self).get_context_data(*args, **kwargs)
         context['about_me'] = ' '
-        context['projects'] = 'border-bottom'
+        context['projects'] = 'show-active'
         context['skillset'] = ' '
         context['cv'] = ' '
         return context
@@ -82,7 +82,7 @@ def cv(request):
     'about_me' : ' ',
     'projects' : ' ',
     'skillset' : ' ',
-    'cv' : 'border-bottom'
+    'cv' : 'show-active'
     }
     return render(request, 'website/cv.html', context)
 

@@ -2,28 +2,36 @@
 display: none;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .col-height-custom {
     height: 80vh;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .col-height-custom {
     height: 60vh;
   }
+  .show-active, .nav-item:hover {
+    border-bottom: 2px solid white !important;
+  }
+  .nav-link {
+    width: 105px;
+    text-align: center !important;
+  }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .col-height-custom {
     height: 90vh;
   }
 }
 
-#follow > li:hover {
-    background: darkblue;
+@media (min-width: 1200px) {
+  .col-height-custom {
+    height: 1140px;
+  }
 }
 
-.border-bottom {
-  border-bottom: 2px solid white !important;
-}
+#follow > li:hover {
+    background: darkblue;

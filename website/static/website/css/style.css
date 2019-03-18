@@ -2,9 +2,12 @@
 display: none;
 }
 
-@media (max-width: 576px) {
+@media (min-width: 576px) {
   .col-height-custom {
     height: 80vh;
+  }
+  .show-active, .nav-item:hover {
+    border-bottom: 2px solid white !important;
   }
 }
 
@@ -16,7 +19,7 @@ display: none;
     border-bottom: 2px solid white !important;
   }
   .nav-link {
-    width: 125px;
+    width: 150px;
     text-align: center !important;
   }
 }

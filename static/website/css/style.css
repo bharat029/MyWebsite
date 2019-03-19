@@ -9,14 +9,15 @@ display: none;
   .show-active, .nav-item:hover {
     border-bottom: 2px solid white !important;
   }
+  .nav-link {
+    min-width: 75px;
+    text-align: center !important;
+  }
 }
 
 @media (min-width: 768px) {
   .col-height-custom {
     height: 60vh;
-  }
-  .show-active, .nav-item:hover {
-    border-bottom: 2px solid white !important;
   }
   .nav-link {
     width: 150px;
@@ -32,4 +33,8 @@ display: none;
 
 #follow > li:hover {
     background: darkblue;
+}
+
+.follow-ul > li > a, nav-link {
+  display: block;
 }
